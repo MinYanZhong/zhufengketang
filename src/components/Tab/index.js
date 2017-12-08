@@ -18,6 +18,10 @@ class Tab extends Component {
           <i className="iconfont icon-react"></i>
           <span>我的课程</span>
         </NavLink>
+        <NavLink to="/cart">
+          <i className="iconfont icon-react"></i>
+          <span>购物车</span>
+        </NavLink>
         <NavLink to="/profile">
           <i className="iconfont icon-xiaolian"></i>
           <span>个人中心</span>

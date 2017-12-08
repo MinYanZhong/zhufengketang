@@ -44,14 +44,16 @@ app.get('/lessons',function(req,res){
   limit = isNaN(limit) ? 0 : parseInt(limit);
   let data = JSON.parse(JSON.stringify(lessons));
   data.list = data.list.filter(item=>type==""?true:item.type == type);
-  for (let i = 1; i <= limit; i++) {
+  let total = data.list.length;
+  data.list = data.list.slice(offset,offset+limit);
+  for (let i = 1; i <= data.list.length; i++) {
     let lesson = data.list[i - 1];
-    lesson.name = `${offset + i}-${lesson.name}`;
+    lesson.title = `${offset + i}-${lesson.title}`;
   }
-  if (offset == 10) {
-    data.hasMore = false;
-  }
-  res.json(data);
+  data.hasMore = offset+limit<total;
+  setTimeout(function(){
+    res.json(data);
+  },2000);
 });
 //注册接口
 app.post('/signup',function(req,res){

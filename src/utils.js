@@ -14,7 +14,7 @@ export function upMore(element,callback){
   });
 }
 
-export function downRefresh(element,callback){
+export function downRefresh(element,reload,callback){
    element.addEventListener('touchstart',touchStart);
    let startY;//开始触摸的纵坐标
    let distance;//移动的距离

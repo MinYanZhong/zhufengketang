@@ -20,9 +20,10 @@ class Home extends Component {
     return (
       <div className="home">
         <HomeHeader
-          setLesson={this.props.setLesson}
-          lesson={this.props.lesson}/>
+          setType={this.props.setType}
+          type={this.props.type}/>
         <div ref="content" className="main-content">
+          <div className="reload"></div>
           <Slider sliders={this.props.sliders}/>
           <Lessons
             getLessons = {this.props.getLessons}
@@ -34,6 +35,6 @@ class Home extends Component {
 }
 //actions是action的创建器
 export default connect(
-  state => state.home,//{lesson:0,sliders:[],lessons}
+  state => state.home,//{type:'',sliders:[],lessons}
   actions
 )(Home)

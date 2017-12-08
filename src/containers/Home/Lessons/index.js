@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './index.less'
 import Loading from "../../../components/Loading/index";
+import {Link} from 'react-router-dom';
 export default class Lessons extends Component {
   render() {
     return (
@@ -11,11 +12,13 @@ export default class Lessons extends Component {
         </div>
         {
           this.props.lessons.list.map((item, index) => (
-            <div className="lesson" key={index}>
-              <img src={item.url}/>
-              <p>{item.title}</p>
-              <p className="price">{item.price}</p>
-            </div>
+            <Link key={index} to={{pathname:'/detail',state:item}}>
+              <div className="lesson" >
+                <img src={item.url}/>
+                <p>{item.title}</p>
+                <p className="price">{item.price}</p>
+              </div>
+            </Link>
           ))
         }
         {

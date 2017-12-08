@@ -15,14 +15,13 @@ export default class HomeHeader extends Component {
     >
       <ul
         onClick={event=>{
-          this.props.setLesson(event.target.dataset.id);
+          this.props.setType(event.target.dataset.type);
           this.setState({isShow:false});
         }}
         className="menu-list">
-        <li className={this.props.lesson=='1'?'active':''} data-id="1">Node课程培训</li>
-        <li className={this.props.lesson=='2'?'active':''} data-id="2">HTML培训课程</li>
-        <li className={this.props.lesson=='3'?'active':''} data-id="3">视频课程</li>
-        <li className={this.props.lesson=='4'?'active':''} data-id="4">文档课件</li>
+        <li className={this.props.type==''?'active':''} data-type="">全部分类</li>
+        <li className={this.props.type=='react'?'active':''} data-type="react">React</li>
+        <li className={this.props.type=='vue'?'active':''} data-type="vue">Vue</li>
       </ul>
     </CSSTransition>
   )

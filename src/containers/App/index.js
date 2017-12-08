@@ -13,6 +13,7 @@ import createHistory from 'history/createHashHistory';
 const history = createHistory();//用来管理路由历史的
 //连接后的路由容器，连接的是路由容器和仓库(store)
 import {ConnectedRouter} from 'react-router-redux';
+import Detail from "../Detail/index";
 /**
  * 1.改App.js 用ConnectedRouter 替换掉 Router
  * 2.改Store 使用router中间件
@@ -22,8 +23,9 @@ export default class App extends Component {
   render() {
     return (
       <ConnectedRouter history={history}>
-        <div style={{height:'100%'}}>
+        <div style={{height:'100%'}} className="container">
           <Route exact path="/" component={Home}/>
+          <Route path="/detail" component={Detail}/>
           <Route path="/courses" component={Courses}/>
           <Route path="/profile" component={Profile}/>
           <Route path="/login" component={Login}/>

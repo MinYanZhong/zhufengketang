@@ -1,9 +1,24 @@
-.main-content{
-  width: 100%;
-  position: fixed;
-  top:56px;
-  bottom:54px;
-  overflow-y: scroll;
-  overflow-x: hidden;
-  background-color: #FFF;
+.home {
+  overflow: hidden;
+  .main-content {
+    .reload{
+      position: absolute;
+      top:0;
+      left:0;
+      height:56px;
+      width:100%;
+      background-image: url(../../images/loading1.gif);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    padding-top: 56px;
+    bottom: 54px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background-color: #FFF;
+  }
 }
