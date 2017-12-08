@@ -8,7 +8,7 @@ app.use(session({
   saveUninitialized:true,//保存未初始化的session
   secret:'zfpx'//密钥
 }));
-let sliders = require('./mock/slider');
+let sliders = require('./mock/sliders');
 let users = [];
 app.use(function(req,res,next){
   //允许的来源
@@ -39,20 +39,19 @@ let lessons = require('./mock/lessons');
 // http://localhost:3000/lessons?offset=10&limit=5
 //不能无限加载，比如说现在规定一共只有三页数据
 app.get('/lessons',function(req,res){
-  //深度克隆
-  let cloneLessons = JSON.parse(JSON.stringify(lessons));
-  //取得查询字符串对象参数 offset 偏移量,limit 限定每页的条数
-  let {offset=0,limit=5} = req.query;
-  for(let i=0;i<cloneLessons.list.length;i++){
-    let lesson = cloneLessons.list[i];
-    lesson.title = `${+offset+i+1}-${lesson.title}`;
+  let {limit, offset,type=""} = req.query;
+  offset = isNaN(offset) ? 0 : parseInt(offset);
+  limit = isNaN(limit) ? 0 : parseInt(limit);
+  let data = JSON.parse(JSON.stringify(lessons));
+  data.list = data.list.filter(item=>type==""?true:item.type == type);
+  for (let i = 1; i <= limit; i++) {
+    let lesson = data.list[i - 1];
+    lesson.name = `${offset + i}-${lesson.name}`;
   }
-  if(offset==10){
-    cloneLessons.hasMore = false;
+  if (offset == 10) {
+    data.hasMore = false;
   }
-  setTimeout(function(){
-    res.json(cloneLessons);
-  },1000);
+  res.json(data);
 });
 //注册接口
 app.post('/signup',function(req,res){

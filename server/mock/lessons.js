@@ -1,35 +1,75 @@
 module.exports = {
-  hasMore: true,//是否有更多
+  hasMore: true,
   list: [
     {
-      url: 'http://www.fullstackjavascript.cn/images/vue.png',
-      title: 'Vue.js从理论精讲到项目实战课程',
       id: 1,
-      price: '￥1000.00元'
+      title: 'React全栈架构',
+      url: 'http://www.zhufengpeixun.cn/themes/jianmo2/images/react.png',
+      price: '¥100.00元',
+      type:'react'
     },
     {
-      url: 'http://www.fullstackjavascript.cn/images/xiaochengxu.png',
-      title: '小程序从理论精讲到项目实战课程',
       id: 2,
-      price: '￥2000.00元'
+      title: 'React全栈架构',
+      url: 'http://www.zhufengpeixun.cn/themes/jianmo2/images/react.png',
+      price: '¥200.00元',
+      type:'react'
     },
     {
-      url: 'http://www.fullstackjavascript.cn/images/javascript.png',
-      title: 'JavaScript从理论精讲到项目实战课程',
       id: 3,
-      price: '￥3000.00元'
+      title: 'React全栈架构',
+      url: 'http://www.zhufengpeixun.cn/themes/jianmo2/images/react.png',
+      price: '¥300.00元',
+      type:'react'
     },
     {
-      url: 'http://www.fullstackjavascript.cn/images/angular.png',
-      title: 'Angular从理论精讲到项目实战课程',
       id: 4,
-      price: '￥4000.00元'
+      title: 'React全栈架构',
+      url: 'http://www.zhufengpeixun.cn/themes/jianmo2/images/react.png',
+      price: '¥400.00元',
+      type:'react'
     },
     {
-      url: 'http://www.fullstackjavascript.cn/images/reactnative.png',
-      title: 'ReactNative从理论精讲到项目实战课程',
       id: 5,
-      price: '￥5000.00元'
+      title: 'React全栈架构',
+      url: 'http://www.zhufengpeixun.cn/themes/jianmo2/images/react.png',
+      price: '¥500.00元',
+      type:'react'
+    },
+    {
+      id: 6,
+      title: 'Vue从入门到项目实战',
+      url: 'http://www.zhufengpeixun.cn/themes/jianmo2/images/vue.png',
+      price: '¥100.00元',
+      type:'vue'
+    },
+    {
+      id: 7,
+      title: 'Vue从入门到项目实战',
+      url: 'http://www.zhufengpeixun.cn/themes/jianmo2/images/vue.png',
+      price: '¥200.00元',
+      type:'vue'
+    },
+    {
+      id: 8,
+      title: 'Vue从入门到项目实战',
+      url: 'http://www.zhufengpeixun.cn/themes/jianmo2/images/vue.png',
+      price: '¥300.00元',
+      type:'vue'
+    },
+    {
+      id: 9,
+      title: 'Vue从入门到项目实战',
+      url: 'http://www.zhufengpeixun.cn/themes/jianmo2/images/vue.png',
+      price: '¥400.00元',
+      type:'vue'
+    },
+    {
+      id: 10,
+      title: 'Vue从入门到项目实战',
+      url: 'http://www.zhufengpeixun.cn/themes/jianmo2/images/vue.png',
+      price: '¥500.00元',
+      type:'vue'
     }
   ]
 }
